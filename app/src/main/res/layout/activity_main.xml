@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.suresh.databinding.example.MainViewModel" />
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <ImageView
+            loadImage="@{mainViewModel.url}"
+            android:layout_width="200dp"
+            android:layout_height="150dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Technology"
+            android:layout_marginTop="30dp"
+            android:text="@{mainViewModel.tech}"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Experience"
+            android:textSize="30sp"
+            android:text="@{mainViewModel.exp}"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_marginTop="50dp"
+            android:textSize="20sp"
+            android:onClick="@{()-> mainViewModel.onUpdateData()}"
+            android:text="Update Data"
+            android:layout_width="200dp"
+            android:layout_height="50dp"/>
+
+    </LinearLayout>
+</layout>
